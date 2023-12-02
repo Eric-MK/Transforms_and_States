@@ -1,4 +1,6 @@
 import cairo
+import os
+
 
 def draw_desk(context):
     # Draw a rectangle for the desk at (0, 0)
@@ -14,6 +16,8 @@ draw_desk(context)
 
 # Save the result to a PNG file in the "output" folder
 output_folder = "output_folder"
-output_filepath = f"{output_folder}/desk_default.png"
-surface.write_to_png
 
+output_path = os.path.join(output_folder, "desk_default.png")
+surface.write_to_png(output_path)
+
+print(f"Saved the result to: {output_path}")
